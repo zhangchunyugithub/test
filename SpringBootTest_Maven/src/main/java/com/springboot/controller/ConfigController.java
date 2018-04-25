@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 读取config方法测试
  * @auther zhangchy
  * @create 2018/2/25
  */
