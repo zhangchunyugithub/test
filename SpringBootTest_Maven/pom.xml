@@ -23,8 +23,24 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.yonyou.cloud.middleware</groupId>
+            <artifactId>mwclient</artifactId>
+            <scope>provided</scope>
+            <version>2.3.1-RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>iuap-utils</artifactId>
+            <version>3.2.1-SNAPSHOT</version>
         </dependency>
        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,11 +55,11 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.yonyou.diwork</groupId>
             <artifactId>diwork-common</artifactId>
-            <version>2.0.0-SNAPSHOT</version>
-        </dependency>
+            <version>2.1.0-SNAPSHOT</version>
+        </dependency>-->
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
             <artifactId>tenantauth-sdk</artifactId>
@@ -95,11 +111,11 @@
             <artifactId>iuap-cache</artifactId>
         </dependency>-->
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.yonyou.diwork</groupId>
             <artifactId>diwork-pub</artifactId>
-            <version>2.0.0-SNAPSHOT</version>
-        </dependency>
+            <version>2.1.0-SNAPSHOT</version>
+        </dependency>-->
 
     </dependencies>
 

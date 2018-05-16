@@ -4,9 +4,12 @@ import com.springboot.banner.MyBanner;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
+import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,6 +57,26 @@ public class ApplictionBootApplication {
         configurer.setTemplateLoaderPaths("classpath:/templates/");
         configurer.setFreemarkerVariables(variables);
         return configurer;
+    }
+
+    /**
+     * springboot  自定义数据源
+     * @return
+     */
+    //@Bean
+    public DataSource dataSource() {
+        return DataSourceBuilder.create().build();
+
+//       DruidDataSource dataSource = new DruidDataSource();
+//        dataSource.setUrl("123123");
+//        dataSource.setUsername(env.getProperty("spring.datasource.username"));
+//        dataSource.setPassword(env.getProperty("spring.datasource.password"));
+//        try {
+//            dataSource.init();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return dataSource;
     }
 
 
