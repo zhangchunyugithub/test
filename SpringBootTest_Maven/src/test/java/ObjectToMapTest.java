@@ -34,7 +34,7 @@ public class ObjectToMapTest {
     public void test(){
         TeamConfigVO team = new TeamConfigVO();
         try {
-            Map<String, String> map = MapUtils.toStringMap1(team);
+            Map<String, String> map = MapUtils.toStringMap2(team);
             System.out.println(map);
         } catch (IntrospectionException e) {
             e.printStackTrace();

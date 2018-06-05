@@ -25,8 +25,17 @@
         <dependency>
             <groupId>com.yonyou.cloud.middleware</groupId>
             <artifactId>mwclient</artifactId>
-            <scope>provided</scope>
             <version>2.3.1-RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk15on</artifactId>
+                </exclusion>
+                <!--<exclusion>
+                    <groupId>com.yonyou.cloud.middleware</groupId>
+                    <artifactId>helix-bootstrap</artifactId>
+                </exclusion>-->
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,6 +45,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+       <dependency>
+            <groupId>com.yonyou.diwork</groupId>
+            <artifactId>diwork-sdk</artifactId>
+            <version>2.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yonyou.diwork</groupId>
+            <artifactId>diwork-pub-service</artifactId>
+            <version>2.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
@@ -64,6 +83,11 @@
             <groupId>com.yonyou.iuap</groupId>
             <artifactId>tenantauth-sdk</artifactId>
             <version>0.0.5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>tenantauth-common</artifactId>
+            <version>0.0.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.yonyou.osp</groupId>
@@ -164,7 +188,7 @@
 
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>test</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>

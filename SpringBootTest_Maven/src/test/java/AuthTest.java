@@ -22,7 +22,21 @@ public class AuthTest {
 
 
 	@Test
+	public void addRole(){
+		Map<String, String> map = new HashMap<>();
+		map.put("systemCode","tm");
+		map.put("roleCode","admin");
+		map.put("roleId","adminjp2fh75r");
+		map.put("tenantId","jp2fh75r");
+		map.put("roleName","管理员");
+		String s = RoleCenter.addRole(map);
+		System.out.println(s);
+	}
+
+
+	@Test
 	public void test8(){
+		//
 		net.sf.json.JSONObject json = new net.sf.json.JSONObject();
 		json.put("roleCode", "code501");
 		json.put("roleId", "141bf58a-f077-4e9b-a4b4-a39b9f83d8631");

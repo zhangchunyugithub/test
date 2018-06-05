@@ -1,15 +1,21 @@
 package com.springboot;
 
 import com.springboot.banner.MyBanner;
+import com.springboot.listener.MyListener;
+import com.yonyou.cloud.middleware.IMiddlerWare;
+import com.yonyou.cloud.mwclient.MwClientLoader;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +23,10 @@ import java.util.Map;
  * @auther zhangchy
  * @create 2018/1/10
  */
-
 @SpringBootApplication
+@ImportResource({ IMiddlerWare.MWCLIENT_CONFIG_XML })
+@ServletComponentScan
+@EnableScheduling //开启扫描任务调度
 public class ApplictionBootApplication {
 
     public static void main(String[] args) {
@@ -27,14 +35,22 @@ public class ApplictionBootApplication {
         //set banner
         app.setBannerMode(Banner.Mode.CONSOLE);
         app.setBanner(new MyBanner());
+//        app.setListeners(new MwClientLoader());
 
         app.run(args);
 //        SpringApplication.run(ApplictionBootApplication.class, args);
 //        SpringApplication.
     }
 
+    @Bean
+    public ServletListenerRegistrationBean listener (){
+        ServletListenerRegistrationBean<MwClientLoader> bean = new ServletListenerRegistrationBean();
+        bean.setListener(new MwClientLoader());
 
-    
+        return bean;
+    }
+
+
 
   /*  @Bean
     public FilterRegistrationBean initFilter() {
@@ -44,6 +60,15 @@ public class ApplictionBootApplication {
         registrationBean.setOrder(1);
         return registrationBean;
     }*/
+
+//    @Bean
+//    public FilterRegistrationBean RequestListener() {
+//        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+//        registrationBean.setFilter(new DiworkRequestListener());
+//        registrationBean.addUrlPatterns("/*");
+//        return registrationBean;
+//    }
+
 
     /**
      * freemarker 设置
