@@ -61,6 +61,8 @@ public class ConfigController {
 
     @RequestMapping("/specialCharater")
     public String testSpecialCharacterInPom() {
+        System.out.println(logger.isDebugEnabled());
+        System.out.println(logger.isInfoEnabled());
         String salt = env.getProperty("salt");
         logger.error("ConfigController1213");
 

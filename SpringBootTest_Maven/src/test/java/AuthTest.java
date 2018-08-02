@@ -1,6 +1,7 @@
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.springboot.util.RandomData;
+import com.springboot.util.RestfulClient;
 import com.yonyou.iuap.tenant.sdk.OrgRoleCenter;
 import com.yonyou.iuap.tenant.sdk.RoleAppCenter;
 import com.yonyou.iuap.tenant.sdk.RoleCenter;
@@ -19,6 +20,35 @@ import java.util.Map;
  * @create 2018/4/16
  */
 public class AuthTest {
+
+
+	@Test
+	public void test11(){
+		String s = RoleCenter.queryRoles("ipu", "qmnnxcpy");
+		System.out.println(s);
+	}
+
+
+
+
+	@Test
+	public void test10(){
+//		String s = UserRoleCenter.queryUserByRole("ipu");
+//		System.out.println(s);
+//		String baseurl = CasClientPropertyUtil.getPropertyByKey("tenant.tenantauth.base.url");
+		String url = "http://www.diwork.com/service-adapter/rpc-adapter/gateway/";//ipu/czw4u4qb
+		Map<String, String> map = new HashMap<>();
+		map.put("serviceName", "com.yonyou.uap.tenant.service.itf.ITenantRoleUserService");
+		map.put("methodName", "getRoleUserPageOld");
+		JSONArray json = new JSONArray();
+		json.add("ipu_aoyang");
+		json.add("zuj0wqq9");//qmnnxcpy
+		map.put("args", json.toJSONString());
+//		String result = HttpTookit.doPost(url, map);
+		RestfulClient restfulClient = new RestfulClient("tasz0ERoG9kqUJnH","uxCZVKuLInq1ep8OwiMGFN9MpWlhY7");
+		String result = restfulClient.signAndPost(url,map);
+		System.out.println(result);
+	}
 
 
 	@Test
@@ -124,7 +154,7 @@ public class AuthTest {
 //		String s = UserRoleCenter.queryUserByRole("ipu");
 //		System.out.println(s);
 //		String baseurl = CasClientPropertyUtil.getPropertyByKey("tenant.tenantauth.base.url");
-		String url = "https://www.diwork.com/service-adapter/rpc-adapter/tenantauth/";//ipu/czw4u4qb
+		String url = "http://workbench.yyuap.com/service-adapter/rpc-adapter/tenantauth/";//ipu/czw4u4qb
 		Map<String, String> map = new HashMap<>();
 		map.put("serviceName", "com.yonyou.uap.tenant.service.itf.ITenantRoleUserService");
 		map.put("methodName", "getRoleUserPage");
@@ -138,5 +168,7 @@ public class AuthTest {
 		String result = SignUtils.signAndPost(url,map);
 		System.out.println(result);
 	}
+
+
 
 }

@@ -1,7 +1,5 @@
 package com.springboot.vo;
 
-import org.springframework.beans.factory.annotation.Value;
-
 /**
  * Created by liushiquan on 2018/2/5.
  */
@@ -49,10 +47,12 @@ public class TeamConfigVO extends SuperVO {
 
     private String tenantTel;
 
+    private String add;
+
     /**
      * 邀请成员权限 0-只有管理员可邀请，1-全部成员可邀请，2-禁止邀请',
      */
-    private String invitePermission = PERMISSION_ALLOW;
+    private String invitePermission1 = PERMISSION_ALLOW;
 
     /**
      * 加入权限  0-开放,所有用户都可以加入，1禁止加入'
@@ -75,6 +75,13 @@ public class TeamConfigVO extends SuperVO {
      */
     private String terminal = TERMINAL_WEB;
 
+    public String getAdd() {
+        return add;
+    }
+
+    public void setAdd(String add) {
+        this.add = add;
+    }
 
     public String getTerminal() {
         return terminal;
@@ -108,12 +115,12 @@ public class TeamConfigVO extends SuperVO {
         this.logo = logo;
     }
 
-    public String getInvitePermission() {
-        return invitePermission;
+    public String getInvitePermission1() {
+        return invitePermission1;
     }
 
-    public void setInvitePermission(String invitePermission) {
-        this.invitePermission = invitePermission;
+    public void setInvitePermission1(String invitePermission1) {
+        this.invitePermission1 = invitePermission1;
     }
 
     public String getJoinPermission() {

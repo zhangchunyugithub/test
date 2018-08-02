@@ -7,6 +7,7 @@
     <groupId>zcy.test</groupId>
     <artifactId>SpringBootTest_Maven</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <properties>
         <boot.version>1.5.8.RELEASE</boot.version>
         <java.version>1.8</java.version>
@@ -51,9 +52,20 @@
             <artifactId>diwork-sdk</artifactId>
             <version>2.1.0-SNAPSHOT</version>
         </dependency>
+        <!--加密算法包-->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.58</version>
+        </dependency>
         <dependency>
             <groupId>com.yonyou.diwork</groupId>
             <artifactId>diwork-pub-service</artifactId>
+            <version>2.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yonyou.diwork</groupId>
+            <artifactId>diwork-pub-auth</artifactId>
             <version>2.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -135,11 +147,11 @@
             <artifactId>iuap-cache</artifactId>
         </dependency>-->
 
-        <!--<dependency>
+        <dependency>
             <groupId>com.yonyou.diwork</groupId>
-            <artifactId>diwork-pub</artifactId>
+            <artifactId>diwork-pub-auth</artifactId>
             <version>2.1.0-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
 

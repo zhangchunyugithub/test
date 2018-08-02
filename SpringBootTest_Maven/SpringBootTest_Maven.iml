@@ -139,6 +139,8 @@
     <orderEntry type="library" name="Maven: com.yonyou.diwork:diwork-framework-event:2.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: javax.transaction:javax.transaction-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: com.yonyou.diwork:diwork-pub-session:2.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.58" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.58" level="project" />
     <orderEntry type="library" name="Maven: com.yonyou.diwork:diwork-pub-service:2.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.yonyou.diwork:diwork-common:2.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.12.RELEASE" level="project" />
@@ -151,6 +153,7 @@
     <orderEntry type="library" name="Maven: org.jboss:jandex:2.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.yonyou.diwork:diwork-pub-auth:2.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.yonyou.iuap:iuap-utils:3.2.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.yonyou.iuap:iuap-log:3.2.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.1.11" level="project" />
