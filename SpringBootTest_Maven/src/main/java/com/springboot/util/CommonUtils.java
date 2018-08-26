@@ -1,10 +1,5 @@
 package com.springboot.util;
 
-import com.alibaba.fastjson.JSON;
-import com.yonyou.iuap.utils.CookieUtil;
-import net.sf.json.JSONObject;
-
-import javax.servlet.http.Cookie;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -64,21 +59,21 @@ public class CommonUtils {
      * @return String    返回类型 
      * @throws
      */
-    public static String replaceParam(String baseText,Object jsonParam){
+    /*public static String replaceParam(String baseText,Object jsonParam){
     	List<String> textParam = extractMessageByRegular(baseText);
     	if(textParam.isEmpty()) return baseText;
     	JSONObject json = null;
     	if(jsonParam==null){
     		json = new JSONObject();
     	}else{
-    		json = JSONObject.fromObject(jsonParam);
+    		json = JSON.parseObject(jsonParam);
     	}
     	for(String p : textParam){
     		String val = json.containsKey(p)?json.getString(p):"";
     		baseText = baseText.replace("["+p+"]", val);
     	}
     	return baseText;
-    }
+    }*/
     
    /* public static boolean isJson(String str) {
 		boolean flag = true;
@@ -90,19 +85,19 @@ public class CommonUtils {
 		return flag;
 	}*/
 	
-    public static boolean isRoleOrgVisible(Cookie[] requestCookies){
+    /*public static boolean isRoleOrgVisible(Cookie[] requestCookies){
     		String orgControl =  CookieUtil.findCookieValue(requestCookies, "orgControl");
     		if(orgControl!=null && "1".equals(orgControl)){
     			return true;
     		}
     		return false;
-    }
+    }*/
 
-    public static boolean isTenantMgr(Cookie[] requestCookies){
+    /*public static boolean isTenantMgr(Cookie[] requestCookies){
     		String isTenantMgr =  CookieUtil.findCookieValue(requestCookies, "isTenantMgr");
     		if(isTenantMgr!=null && "1".equals(isTenantMgr)){
     			return true;
     		}
     		return false;
-    }
+    }*/
 }

@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import javax.sql.DataSource;
@@ -18,6 +19,7 @@ import java.util.Map;
  * @create 2018/1/10
  */
 
+@EnableScheduling
 @SpringBootApplication
 public class ApplictionBootApplication {
 

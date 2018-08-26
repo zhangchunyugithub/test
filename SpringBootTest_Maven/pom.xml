@@ -22,12 +22,12 @@
     <!-- Add typical dependencies for a web application -->
     <dependencies>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>com.yonyou.cloud.middleware</groupId>
             <artifactId>mwclient</artifactId>
             <scope>provided</scope>
             <version>2.3.1-RELEASE</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -37,11 +37,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.yonyou.iuap</groupId>
             <artifactId>iuap-utils</artifactId>
             <version>3.2.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -52,24 +52,33 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
+      <!--  <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.0.0-RC1</version>
+        </dependency>
+-->
         <!--<dependency>
             <groupId>com.yonyou.diwork</groupId>
             <artifactId>diwork-common</artifactId>
             <version>2.1.0-SNAPSHOT</version>
         </dependency>-->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.yonyou.iuap</groupId>
             <artifactId>tenantauth-sdk</artifactId>
             <version>0.0.5-SNAPSHOT</version>
-        </dependency>
-        <dependency>
+        </dependency>-->
+        <!--<dependency>
             <groupId>com.yonyou.osp</groupId>
             <artifactId>osp-cas-client</artifactId>
             <version>0.0.6-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <!--<dependency>
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>
@@ -97,14 +106,19 @@
             <version>3.3.0</version>
         </dependency>
         <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-        <dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.sf.json-lib</groupId>-->
+            <!--<artifactId>json-lib</artifactId>-->
+            <!--<version>2.4</version>-->
+        <!--</dependency>-->
 
      <!--  <dependency>
             <groupId>com.yonyou.iuap</groupId>
@@ -118,6 +132,22 @@
         </dependency>-->
 
     </dependencies>
+
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <ykj.salt><![CDATA[Ih8&83Hl%!@hHtpHSp12HrDl8]]></ykj.salt>
+                <pom.haha>232323</pom.haha>
+            </properties>
+        </profile>
+
+    </profiles>
+
 
     <!-- Package as an executable jar -->
     <build>
@@ -161,19 +191,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <ykj.salt><![CDATA[Ih8&83Hl%!@hHtpHSp12HrDl8]]></ykj.salt>
-                <pom.haha>232323</pom.haha>
-            </properties>
-        </profile>
-
-    </profiles>
 
 </project>

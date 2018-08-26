@@ -30,7 +30,7 @@ public class InitFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println(1111111);
+        System.out.println("过滤器执行了");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

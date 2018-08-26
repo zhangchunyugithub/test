@@ -1,10 +1,8 @@
 package com.springboot.util;
 
-import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.io.StringWriter;
-import java.util.*;
 
 /**
  * @auther zhangchy
