@@ -1,5 +1,6 @@
 package com.springboot.controller;
 
+import com.springboot.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 读取config方法测试
@@ -19,6 +26,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConfigController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
+
+    /**
+     * maven 可以自动注入到map中
+     */
+    @Autowired
+    private Map<String, StudentService> map = new HashMap<>();
 
     @Value("${spring.application.name}")
     private String salt1;
@@ -36,8 +49,11 @@ public class ConfigController {
         return salt;
     }
 
-    @RequestMapping("/specialCharater1")
-    public String testSpecialCharacterInPom1() {
+    @RequestMapping(value="/specialCharater1",method = RequestMethod.GET)
+    public String testSpecialCharacterInPom1(@RequestParam(name = "showDept",defaultValue = "false") boolean showDept) {
+        Set<String> strings = map.keySet();
+        System.out.println(strings);
+        System.out.println(showDept);
         //System.out.println(12312);
 //        System.out.println(2222);
         return "12312";
@@ -45,6 +61,8 @@ public class ConfigController {
 
     @RequestMapping("/specialCharater")
     public String testSpecialCharacterInPom() {
+        System.out.println(logger.isDebugEnabled());
+        System.out.println(logger.isInfoEnabled());
         String salt = env.getProperty("salt");
         logger.error("ConfigController1213");
 

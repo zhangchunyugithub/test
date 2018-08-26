@@ -48,7 +48,7 @@
 	<logger name="com.springboot.controller.QRExample" level="DEBUG" >
 		<appender-ref ref = "rollingFile1"/>
 	</logger>
-	<logger name="com.springboot.controller.ConfigController" level="DEBUG" >
+	<logger name="com.springboot.controller.ConfigController" level="info" >
 		<appender-ref ref = "rollingFile1"/>
 	</logger>
 

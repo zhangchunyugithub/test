@@ -1,13 +1,10 @@
 package com.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.springboot.service.StudentService;
 import com.springboot.util.Student;
 import com.springboot.util.StudentUtils;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,10 +26,22 @@ public class StudentController {
     @Autowired
     private StudentUtils studentUtils;
 
+    @Autowired
+    private Student student;
+
+    /*@Autowired
+    private IServiceIsolateService serviceIsolateService;*/
+
+
+    @RequestMapping("/studentName")
+    public void test3(){
+        System.out.println(student.getName());
+    }
 
     @RequestMapping("/getUrl")
     public void test(String url){
         System.out.println(url);
+//        serviceIsolateService.findUserDataPermission();
 
     }
 

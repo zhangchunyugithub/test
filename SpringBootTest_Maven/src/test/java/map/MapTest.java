@@ -13,10 +13,12 @@ import java.util.Map;
  */
 public class MapTest {
 
-	@Test
-	public void test1(){
-		Map<String, List<String>> map = new HashMap<>();
-		map.computeIfAbsent("aa",k->new ArrayList()).add("111");
+    @Test
+    public void test1() {
+        Map<String, List<String>> map = new HashMap<>();
+        map.computeIfAbsent("aa", k -> new ArrayList()).add("111");
 //		map.computeIfPresent()
-	}
+
+    }
+
 }
